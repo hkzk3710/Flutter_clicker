@@ -53,22 +53,25 @@ class CounterModel with ChangeNotifier {
     _count -= 10;
     _tapIncrement += 1;
     _tapLevel++;
+    notifyListeners();
   }
 
   void autoLevelUp() {
     _count -= 10;
     _autoIncrement += 10;
     _autoLevel++;
+    notifyListeners();
   }
 
   void auto2LevelUp() {
     _count -= 100;
     _auto2Increment += 10;
     _auto2Level++;
+    notifyListeners();
   }
 
   void addByTime() {
-    _count += (_autoIncrement += _auto2Increment);
+    _count += (_autoIncrement + _auto2Increment);
     notifyListeners();
   }
 
@@ -80,6 +83,7 @@ class CounterModel with ChangeNotifier {
     _autoLevel = 0;
     _auto2Increment = 0;
     _auto2Level = 0;
+    notifyListeners();
   }
 }
 
