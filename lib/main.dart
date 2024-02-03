@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/counter_model.dart';
 
 import 'screens/main_screen.dart';
 
@@ -23,24 +24,10 @@ class _MainState extends State<Main> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Clicker'),
+      home: MyHomePage(
+        title: 'Flutter Clicker',
+        count: CounterModel(),
+      ),
     );
   }
 }
-
-
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: const MyHomePage(title: 'Flutter Clicker'),
-//     );
-//   }
-// }
